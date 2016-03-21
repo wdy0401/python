@@ -96,14 +96,38 @@ def add(x,y,f):
 	return f(x)+f(y)
 print(add(1,-1,myabs))
 
+#列表生成器 yield项为生成项 可以不设置终止时刻 也就是生个一个无限长的序列
+# y=iter()为generator y=iter为函数
+def iter():
+    n=1
+    while True:
+        yield n
+        n=n+1
+        
+y=iter()
+while True:
+    n=next(y)
+    if n>10:
+        break
+    print(n)
+    
 #map reduce
 def f(x):
     return x*x
 lst=(range(10))
 print(lst)
 print(list(map(f,lst)))
+from functools import reduce
+def f2(x,y):
+    return x+y
+print(reduce(f2,map(f,lst)))
 
 #filter
+#simple filter
+def f3(x):
+    return x%2
+print(list(filter(f3,range(1,9))))
+#prime number
 def f1():
 	n=2
 	while True:
