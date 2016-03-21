@@ -103,6 +103,26 @@ lst=(range(10))
 print(lst)
 print(list(map(f,lst)))
 
+#filter
+def f1():
+	n=2
+	while True:
+		yield n
+		n=n+1
+def del_m(n):
+	return lambda x:x%n>0
+def f2():
+	n=f1()
+	while True:
+		m=next(n)
+		yield m
+		n=filter(del_m(m),n)
+for n in f2():
+	print(n)
+	if n>10:
+		break
+
+#sorted
 
 
 
