@@ -147,6 +147,14 @@ for n in f2():
 		break
 
 #sorted
+L = [('Bob', 75), ('Adam', 92), ('Bart', 66), ('Lisa', 88)]
+L=dict(L)
+def by_score(t):
+	return L[t]
+for i in (sorted(L,key=by_score,reverse=True)):
+	print(i,L[i])
+for i in (sorted(L,key=lambda x:L[x],reverse=True)):
+	print(i,L[i])
 
 
 
