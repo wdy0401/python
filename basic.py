@@ -155,6 +155,22 @@ for i in (sorted(L,key=by_score,reverse=True)):
 	print(i,L[i])
 for i in (sorted(L,key=lambda x:L[x],reverse=True)):
 	print(i,L[i])
+	
+#closure
+def lazy_sum(*args):
+	sums=0 # put sums here:  lazysum give the total sum of all given args
+	def sum():
+		# put sums here: just lazy sum
+		nonlocal sums
+		for i in args:
+			sums+=i
+		return sums
+	return sum
+f=lazy_sum(1,2,3,4,5)
+print(f)
+print(f())
+print(f())
+
 
 
 
