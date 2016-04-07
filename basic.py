@@ -171,6 +171,11 @@ print(f)
 print(f())
 print(f())
 
+def f5():
+	print("func name f5")
+	print(f5.__name__)
+f5()
+
 
 
 
