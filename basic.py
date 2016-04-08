@@ -176,8 +176,6 @@ def f5():
 	print(f5.__name__)
 f5()
 
-
-
-
+#decorator
 
 
