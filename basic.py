@@ -177,5 +177,54 @@ def f5():
 f5()
 
 #decorator
+def pt_1(f):
+	def sub_1():
+		print("aa")
+		f()
+	return sub_1
+	
+@pt_1
+def f6():
+	print("f6 name "+f6.__name__)
+f6()
 
+import functools
+def pt_2(ctt):
+	def pt_3(f):
+		@functools.wraps(f)
+		def pt_4():
+			print(ctt)
+			print("bb")
+			f()
+		return pt_4
+	return pt_3
+	
+	
+@pt_2("b2b")
+def f7():
+	print("f7 name "+f7.__name__)
+f7()
 
+#partial
+def f8(a,b):
+	return a
+f9=functools.partial(f8,2)
+print(f9(3))
+print(f8(1,2))
+
+#import
+import sys
+sys.path.append('c:\code\python')
+print(sys.path)
+
+import test_w
+test_w.print_test()
+print('1')
+
+#class
+class c1(object):
+	def c1f(self):
+		print("c1f")
+
+oc1=c1()
+oc1.c1f()
