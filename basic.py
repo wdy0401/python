@@ -223,8 +223,64 @@ print('1')
 
 #class
 class c1(object):
+	__p1=1
+	p2=2
 	def c1f(self):
 		print("c1f")
 
 oc1=c1()
 oc1.c1f()
+print(oc1.p2)
+#print(oc1.__p1) 私有变量 无法访问 
+
+class c2(c1):
+	def c1f(self):
+		print("c1f c2f")
+oc2=c2()
+oc2.c1f()
+print (isinstance(oc2,c1))
+print(type(123))
+print(type('123'))
+print(type([1,2,3]))
+print(type({1,2,3}))
+#不宜使用type判断类，or方法等举例如下
+print(type(c1))
+print(type(oc1))
+print(type(c2))
+print(type(oc2))
+print(type(oc2.c1f))
+
+print(isinstance(oc1,c1))
+print(isinstance(oc2,c1))
+print(isinstance("ccc",(str,c1)))
+print(dir(c1))
+print(hasattr(c1,'c1f'))
+
+#实例属性覆盖类属性 删除实例属性后恢复类属性
+print(oc1.p2)
+oc1.p2=22
+print(oc1.p2)
+del oc1.p2
+print(oc1.p2)
+
+#限制属性范围
+class c3(object):
+	__slots__=('age',"name")
+oc3=c3()
+oc3.name="oc3"
+#oc3.name1="oc3" 不可 因slots限制了属性的范围  这个限制不会继承给子类
+
+#property
+class c4(object):
+	__age=0
+	@property
+	def age(self):
+		return self.__age#self 不可缺少
+	@age.setter
+	def age(self,age):
+		self.__age=age
+
+oc4=c4()
+print(oc4.age)
+oc4.age=10
+print(oc4.age)
