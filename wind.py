@@ -26,7 +26,11 @@ from WindPy import *
 w.start();
 
 #open a file to write.
-pf=open('d:/1.txt', 'w')
+import time
+tm=time.strftime("%Y_%m——%d")
+print(tm)
+fname="d:/"+tm+".txt"
+pf=open(fname, 'w')
 #define the callback function
 def sep_fun(name,indata):
 	if indata.ErrorCode!=0:

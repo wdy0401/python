@@ -284,3 +284,15 @@ oc4=c4()
 print(oc4.age)
 oc4.age=10
 print(oc4.age)
+
+from enum import Enum,unique
+@unique
+class wd(Enum):
+	W=1
+	T=2
+d1=wd.W
+print(d1)
+print(wd.W)
+print(d1==1)
+print(wd(1))
+print(wd(1).value)
