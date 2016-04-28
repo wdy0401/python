@@ -3,8 +3,8 @@
 	#mkdir for industry
 		#data of each stock
 
-#from WindPy import *
-#w.start();
+from WindPy import *
+w.start();
 
 a=w.wsd('000637.SZ','close,industry_sw,industry_swcode,indexcode_sw,industry_citic,industry_citiccode,industry_gx,industry2,industrycode,industryname','2016-04-01','2016-04-18','industryType=1','category=1','industryStandard=1','PriceAdj=F')
 
