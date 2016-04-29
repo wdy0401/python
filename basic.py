@@ -296,3 +296,11 @@ print(wd.W)
 print(d1==1)
 print(wd(1))
 print(wd(1).value)
+
+#error 
+try:
+    print(1/0)
+except ZeroDivisionError as e:
+    print("error",e)
+    
+    
