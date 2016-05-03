@@ -302,5 +302,11 @@ try:
     print(1/0)
 except ZeroDivisionError as e:
     print("error",e)
+except ValueError as e:
+    print("error",e)
+else:
+    print("other error")
+finally:
+    print("finally")
     
     
