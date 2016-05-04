@@ -308,5 +308,27 @@ else:
     print("other error")
 finally:
     print("finally")
+
+#IO
+with open("./tmp.py","w",encoding='utf-8',errors='ignore') as fo:
+    with open("./basic.py","r",encoding='utf-8',errors='ignore') as fi:
+        pl=fi.readlines()
+    for i in pl:
+        fo.write(i)
+
+import os
+print(os.name)
+print(os.path.splitext("./tmp.py"))
+os.unlink("./tmp.py")
+import shutil
+shutil.copyfile("./basic.py","./copy_tmp.py")
+os.chdir("../")
+print([x for x in os.listdir('./') if os.path.isdir(x)])
+os.chdir('./python')
+import filecmp
+print(filecmp.cmp("./basic.py","./copy_tmp.py"))
+os.unlink("./copy_tmp.py")
+
+#序列化 pending we want protobuf
     
     
