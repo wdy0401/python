@@ -1,6 +1,7 @@
 from WindPy import *
 w.start();
-
+#w.wsd("10000449.SH", "open,high,low,close,volume,amt,chg,oi,oi_chg,delta,gamma,vega,theta,rho,underlyinghisvol_30d,us_hisvol,underlyinghisvol_90d,us_impliedvol,ptmtradeday,ptmday", "2016-05-17", "2016-06-15", "")
+#上面的是获取期权的历史日数据信息
 print(w.wsd("000159.SZ", "sec_name,close,pe_ttm", "2010-01-01", "2016-04-17", "PriceAdj=F"))
 
 print(w.wsd("000409.SZ", "sec_name,close,pe_ttm", "2010-01-01", "2016-04-17", "PriceAdj=F"))
